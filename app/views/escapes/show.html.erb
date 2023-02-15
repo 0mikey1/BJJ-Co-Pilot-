@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @escape %>
+
+<div>
+  <%= link_to "Edit this escape", edit_escape_path(@escape) %> |
+  <%= link_to "Back to escapes", escapes_path %>
+
+  <%= button_to "Destroy this escape", @escape, method: :delete %>
+</div>

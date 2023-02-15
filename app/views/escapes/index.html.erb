@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Escapes</h1>
+
+<div id="escapes">
+  <% @escapes.each do |escape| %>
+    <%= render escape %>
+    <p>
+      <%= link_to "Show this escape", escape %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New escape", new_escape_path %>
