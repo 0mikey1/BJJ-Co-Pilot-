@@ -1,22 +1,62 @@
-<div id="<%= dom_id position %>">
-  <p>
-    <strong>Name:</strong>
-    <%= position.name %>
-  </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= position.description %>
-  </p>
+<div class="card-deck mb-3">
+  <div class="card" id="<%= dom_id position %>">
+    <div class="card-body">
+      <h5 class="card-title"> <%= position.name %> </h5>
+      <p class="card-text">
+        <strong>Description:</strong> <%= position.description %> <br>
+      </p>
 
-  <p>
-    <strong>Possible submissions:</strong>
-    <%= position.possible_submissions %>
-  </p>
+      <iframe src='https://www.youtube.com/embed/<%= position.video_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
-  <p>
-    <strong>Video url:</strong>
-    <%= position.video_url %>
-  </p>
 
+        <%= link_to "Show Position", position_path(position), class: "btn btn-primary mt-2" %>
+      
+    </div>
+  </div>
 </div>
+
+
+<style>
+  .card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  flex-basis: calc(50% - 20px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+  padding: 1.25rem;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+iframe {
+  width: 100%;
+  height: 200px;
+}
+</style>
+

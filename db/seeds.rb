@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 Submission.destroy_all
+Position.destroy_all
 
 submission1 = Submission.create(name: "Arm bar", category: "Arm Lock", difficulty: "Beginner", from_position: "", description: "", video_url: "Dq8nahFOnI4")
 
@@ -146,5 +147,43 @@ submission68 = Submission.create(name: "Scorpion death lock", category: "Smash",
 
 submission69 = Submission.create(name: "The Boston crab", category: "Spine Crank", difficulty: 
   "Advanced", description: "Also known as a half Boston crab or a half crab, a move that typically starts with the opponent on their back, and the attacking wrestler standing and facing them. The attacking wrestler hooks one of the opponent's legs under one of their arms, and then turns the opponent face-down, stepping over them in the process.", from_position: "passing", video_url: "iMigFMAuJ-Y")
+
+#------------------------------------ Positions --------------------------------------
+
+position0 = Position.create(name: "Standing", video_url: "V4cxh_H7x6o", description: "A guard is considered closed once both legs of the guard player are wrapped around his opponent's waist and the feet are crossed (locked), holding the adversary's hips close to those of the bottom player.", possible_submissions: "Neck Crank, Guillotine Choke")
+
+position1 = Position.create(name: "Closed Guard (Full Guard)", video_url: "kPZh0ZZyZj0", description: "A guard is considered closed once both legs of the guard player are wrapped around his opponent's waist and the feet are crossed (locked), holding the adversary's hips close to those of the bottom player.", possible_submissions: "Arm Bar, Leg Triangle Choke, Kimura, Omaplata, Guillotine Choke, Cross Choke")
+
+position2 = Position.create(name: "Half Guard", video_url: "E8x1Cva8hJ8", description: "The half guard is the position that is in between a full guard and side control or full mount. The combatant on top will try to untangle the leg and pass to obtain side control or mount, while the bottom combatant will try to transition into a full guard or alternatively attempt a sweep or submission.", possible_submissions: "Kimura, Leg Triangle Choke, Electric Chair, Guillotine Choke, Ankle Lock")
+
+position3 = Position.create(name: "Open Guard", video_url: "LPet-GrNNB8", description: "An open guard is any type of guard where our feet are not wrapped around the opponent's waist. An open guard can be performed by having contact with the opponent's arms, legs, hips, ankle, foot, or sleeves and lapel when wearing a gi.", possible_submissions: "Armbar, Leg Triangle Choke, Omaplata, Ankle Lock, Kneebar, Guillotine Choke")
+
+position4 = Position.create(name: "Butterfly Guard", video_url: "MXcQfCIh7n4", description: "The Butterfly Guard is an Open Guard- what that means is that you don't have your legs locked around them as in Half Guard or Closed Guard. Here, you're using your “hooks”, the instep of your feet, to keep your opponent away from your upper body, and to elevate their legs and hips when the opportunity arises.", possible_submissions: "Arm Bar, Triangle Choke, Omaplata, Ankle Lock, Kimura")
+
+position5 = Position.create(name: "Spider Guard", video_url: "5ciTwCNs8uM", description: "Over the years, many guards have been developed and tested in the bright lights of competition. One of these is the venerable spider guard, a gi-based guard where you place your feet on your opponent's biceps to block the upper body while holding the sleeves to manipulate posture.", possible_submissions: "Triangle Choke, Armbar, Omaplata, Kimura")
+
+position6 = Position.create(name: "Squid Guard", video_url: "5M1TLgoOBNU", description: "Squid Guard is a BJJ guard position where one leg is wrapped around the opponent's neck to control their posture and create opportunities for sweeping or submitting. The name Squid Guard is derived from the tentacle-like appearance of the legs when wrapped around the opponent's neck. The main goal of Squid Guard is to control the opponent's posture, making it difficult for them to attack or advance, while also creating opportunities to sweep or submit the opponent.", possible_submissions: "Armbar, Leg Triangle Choke, Guillotine Choke, Omaplata")
+
+position7 = Position.create(name: "Lasso Guard", video_url: "5lgCDDG60d8", description: "The lasso guard is a type of open guard in BJJ that uses leg and sleeve control to immobilize the upper body movements of opponents attempting to pass. Already a powerful open guard itself, the lasso can become more dangerous when combined with other types of open guards such as the spider guard.", possible_submissions: "Leg Triangle Choke, Armbar, Omaplata, Collar Choke")
+
+position8 = Position.create(name: "Lapel Guard", video_url: "6-rhaL_xnow", description: "Lapel Guard is a BJJ guard position where the lapel of the opponent's gi is used to control posture and create opportunities for sweeping or submitting. It's versatile and powerful.", possible_submissions: "Lapel choke, Triangle choke, Omoplata")
+
+position9 = Position.create(name: "De La Riva", video_url: "4WqkHFi7ac0", description: "The De La Riva Guard is a form of open guard with origins in judo that was popularized by Brazilian Jiu-Jitsu (BJJ) legend Ricardo De La Riva. The De La Riva guard involves the bottom player hooking the top player's front leg from the outside with his or her leg.", possible_submissions: " Ankle lock, Toe hold, Straight foot lock")
+
+position10 = Position.create(name: "Reverse De La Riva", video_url: "LKJ3MqFOj24", description: "t is a position used to threaten back takes, and at the same time counter common passing options like the knee cut. The reverse De La Riva guard is similar to the half guard in body position. Therefore many half guard specialists also use this guard.", possible_submissions: "Ankle lock, Toe hold, Straight foot lock")
+
+position11 = Position.create(name: "Side Control", video_url: "nDbHQPBvQvQ",  description: "BJJ side control (often also called side mount or cross mount) is a dominant position where the person on top is lying in such a way that her or his body is at a 90-degree angle to the opponents. In this position, upper body control through pressure and mechanical leverage is the most important part.", possible_submissions: "Armbar, Americana, Kimura, Keylock, Straight armbar, Triangle choke, Mounted triangle, Paper cutter choke, Ezekiel choke, North-South choke.")
+
+position12 = Position.create(name: "Kesa-Gatame", video_url: "eXRL6EWEiws", description: "Kesa Gatame is essentially a headlock on steroids: you wrap one arm around his head, control his near arm with your other arm, and then splay your legs widely facing his head.", possible_submissions: "Armbar, Shoulder lock, Ezekiel choke, Arm triangle choke, Kata Gatame (head and arm choke), Ude garami (Kimura).")
+
+position13 = Position.create(name: "Kuzure Kesa Gatame", video_url: "mNE9wGa9vlQ", description: "The kuzure kesa gatame, or modified kesa gatame, is almost the same as the traditional kesa gatame except for the arm with head control. Instead of going underneath the head, you instead have a deep underhook.", possible_submissions: "Armbar, Shoulder lock, Ezekiel choke, Arm triangle choke, Kata Gatame (head and arm choke), Ude garami (Kimura).")
+
+position14 = Position.create(name: "North South", video_url: "cans383if9Q", description: "The north-south is a position where you lay on top of the opponent with your head pointing towards their feet as you drop your upper body (particularly around the chest area) to pin their torso. It is a variation of the side control position where you line up above the opponent instead of being perpendicular.", possible_submissions: "Kimura, Armbar, Straight armlock, Ezekiel choke, North-South choke, Paper cutter choke, Shoulder lock, Arm triangle choke")
+
+position15 = Position.create(name: "Knee-On-Belly", description: "Knee on Belly (KOB), sometimes known as the knee ride, is a premier controlling position in Brazilian Jiu-Jitsu. The body position is somewhat similar to side control, where you stay on your opponent's side, but you place your knee next to your opponent's belly.",  video_url: "3p-6MUsIy90", possible_submissions: "Armbar, Kimura, Americana, Straight armbar, Arm triangle choke, Ezekiel choke, Collar choke, Baseball bat choke, Loop choke")
+
+position16 = Position.create(name: "Mount", video_url: "OCPLZmupS9c", description: "The mount, or mounted position, is a dominant ground grappling position, where one combatant sits on the other combatants torso with the face pointing towards the opponent's head. This is a favorable position for the top combatant in several ways.", possible_submissions: "Armbar, Americana, Kimura, Straight armlock, Triangle choke, Ezekiel choke, Head and arm choke, Arm triangle choke, Mounted collar choke, Cross choke")
+
+position17 = Position.create(name: "Back Mount", video_url: "d8AhpgO-3t4", description: "The back mount is where you control the opponent from the back. A key idea in using the back mount is to apply chest to back connection as you secure a seatbelt grip. Placing your feet on the opponent's hips is the fundamental positioning taught to beginners.", possible_submissions: "Rear naked choke, Collar choke, Armbar, Triangle choke, Kimura, Straight armlock, Arm triangle choke, Bow and arrow choke, Ezekiel choke, Neck crank")
 
 
