@@ -15,6 +15,10 @@ class BucketsController < ApplicationController
     @bucket = Bucket.new
   end
 
+  def my_bucket
+  @bucket = current_user.bucket
+  end
+
   # GET /buckets/1/edit
   def edit
   end

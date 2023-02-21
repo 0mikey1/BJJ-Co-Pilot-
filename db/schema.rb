@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_15_211830) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
   create_table "bags", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
@@ -61,10 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_15_211830) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bag_id"
+    t.integer "bucket_id"
+    t.index ["bag_id"], name: "index_users_on_bag_id"
+    t.index ["bucket_id"], name: "index_users_on_bucket_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "bags", "users"
   add_foreign_key "buckets", "users"
+  add_foreign_key "users", "bags"
+  add_foreign_key "users", "buckets"
 end

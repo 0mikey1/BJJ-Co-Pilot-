@@ -10,6 +10,10 @@ class BagsController < ApplicationController
   def show
   end
 
+  def my_bag
+  @bag = current_user.bag
+  end
+
   # GET /bags/new
   def new
     @bag = Bag.new
