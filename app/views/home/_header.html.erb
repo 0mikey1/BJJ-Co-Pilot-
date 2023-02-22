@@ -18,10 +18,10 @@
     <ul class="navbar-nav ms-auto">
       <% if user_signed_in? %>
         <li class="nav-item" style="margin-right: 10px;">
-          <span class="nav-link"><%= link_to 'My Bag', 'my_bag', class: "text-white" %></span>
+          <span class="nav-link"><%= link_to 'My Bag', my_bag_path, class: "text-white" %></span>
         </li>
         <li class="nav-item" style="margin-right: 10px;">
-          <span class="nav-link"><%= link_to 'My Bucket', 'my_bucket', class: "text-white" %></span>
+          <span class="nav-link"><%= link_to 'My Bucket', my_bucket_path, class: "text-white" %></span>
         </li>
         <div class='text-white pt-2'> Welcome <%= current_user.email %> </div>
         <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>

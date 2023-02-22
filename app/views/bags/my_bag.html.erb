@@ -1,1 +1,36 @@
-<h1> my Bag </h1>
+<h1>My Bag</h1>
+
+<% if @bag.submissions.any? %>
+  <h2>Submissions</h2>
+  <ul>
+    <% @bag.submissions.each do |submission| %>
+      <li><%= submission.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No submissions in your bag</p>
+<% end %>
+
+
+<% if @bag.positions.any? %>
+  <h2>Positions</h2>
+  <ul>
+    <% @bag.positions.each do |position| %>
+      <li><%= position.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No positions in your bag</p>
+<% end %>
+
+
+<% if @bag.escapes.any? %>
+  <h2>Escapes</h2>
+  <ul>
+    <% @bag.escape.each do |position| %>
+      <li><%= escape.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No escapes in your bag</p>
+<% end %>

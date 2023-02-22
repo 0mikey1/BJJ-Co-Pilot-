@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_010902) do
   create_table "bags", force: :cascade do |t|
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
@@ -31,6 +31,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
     t.string "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bag_id"
+    t.integer "bucket_id"
+    t.index ["bag_id"], name: "index_escapes_on_bag_id"
+    t.index ["bucket_id"], name: "index_escapes_on_bucket_id"
   end
 
   create_table "positions", force: :cascade do |t|
@@ -40,6 +44,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
     t.string "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bag_id"
+    t.integer "bucket_id"
+    t.index ["bag_id"], name: "index_positions_on_bag_id"
+    t.index ["bucket_id"], name: "index_positions_on_bucket_id"
   end
 
   create_table "submissions", force: :cascade do |t|
@@ -51,6 +59,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
     t.string "video_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bag_id"
+    t.integer "bucket_id"
+    t.index ["bag_id"], name: "index_submissions_on_bag_id"
+    t.index ["bucket_id"], name: "index_submissions_on_bucket_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -71,6 +83,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_194131) do
 
   add_foreign_key "bags", "users"
   add_foreign_key "buckets", "users"
+  add_foreign_key "escapes", "bags"
+  add_foreign_key "escapes", "buckets"
+  add_foreign_key "positions", "bags"
+  add_foreign_key "positions", "buckets"
+  add_foreign_key "submissions", "bags"
+  add_foreign_key "submissions", "buckets"
   add_foreign_key "users", "bags"
   add_foreign_key "users", "buckets"
 end

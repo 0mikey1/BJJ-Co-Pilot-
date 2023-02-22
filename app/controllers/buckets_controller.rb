@@ -1,5 +1,6 @@
 class BucketsController < ApplicationController
   before_action :set_bucket, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:add_to_bag]
 
   # GET /buckets or /buckets.json
   def index
@@ -16,9 +17,29 @@ class BucketsController < ApplicationController
   end
 
   def my_bucket
-  @bucket = current_user.bucket
+    @bucket = current_user.bucket
+    @submissions = @bucket.submissions
+    @positions = @bucket.positions
+    @escapes = @bucket.escapes
   end
 
+  def add_submission_to_bucket
+    submission = Submission.find(params[:id])
+    current_user.bucket.submissions << submission
+    redirect_to submission_path(submission), notice: 'Submission was successfully added to your bucket.'
+  end
+
+  def add_position_to_bucket
+    position = Position.find(params[:id])
+    current_user.bucket.positions << position
+    redirect_to position_path(position), notice: 'Position was successfully added to your bucket.'
+  end
+
+  def add_escape_to_bucket
+    escape = Escape.find(params[:id])
+    current_user.bucket.escapes << escape
+    redirect_to escape_path(escape), notice: 'Escape was successfully added to your bucket.'
+  end
   # GET /buckets/1/edit
   def edit
   end
