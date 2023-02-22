@@ -1,9 +1,38 @@
-<% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
-<% else %>
-  <%= button_to "Sign in", new_user_session_path %> 
-<% end %>
+<div class="jumbotron text-center">
+<br> </br>
+<br> </br>
+
+  <h1 class="display-4">Step Up Your Brazilian Jiu Jistu Game with BJJ Co-Pilot!</h1>
+  <p class="lead">Get ready to soar to new heights in your jiu jitsu journey!</p>
+  <hr class="my-4">
+  <p>Unleash your full potential with the ultimate BJJ tool. Browse a never-ending stream of submissions, positions, and escapes. Keep your game tight with our easy-to-use tracking system, and share your own tips and tricks with the community!</p>
+  <p class="lead">
+    <%= link_to 'Join the Crew', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+  </p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center">Discover and Save Techniques. </h3>
+      <br>
+      <p>Add techniques to <b>"The Bucket"</b>. These are techniques that you want to master. Exploration is made simple with our comprehensive feed of Brazilian Jiu Jitsu techniques, including submissions, positions, and escapes. 
+    </div>
+    <div class="col-md-4">
+      <h3 class="text-center">Track your progress with ease. </h3>
+      <br>
+      <p>Add techniques you've mastered to <b>"The Bag"</b>. These are techniques you have executed in sparring or competition. Keep track of your journey to black belt. Keep tabs on what you're learning and how far you've come!</p>
+    </div>
+    <div class="col-md-4">
+      <h3 class="text-center">Elevate the Community</h3>
+      <br>
+      <br>
+      <p>Join a community of BJJ enthusiasts and become a part of elevating the sport. Share your skills, gain new insights and help others reach their full potential. Unleash the full potential of your BJJ journey!</p>
+    </div>
+  </div>
+</div>
 
 
-<h1> Landing Page </h1>
+
+
+

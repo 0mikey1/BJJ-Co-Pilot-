@@ -3,8 +3,13 @@
 <%= render @escape %>
 
 <div>
-  <%= link_to "Edit this escape", edit_escape_path(@escape) %> |
-  <%= link_to "Back to escapes", escapes_path %>
+ 
 
-  <%= button_to "Destroy this escape", @escape, method: :delete %>
+  <div class ='text-center'> 
+
+  <%= button_to "Add to Bag", add_escape_to_bag_path(@escape), method: :post, class: "btn btn-primary" %>
+  <%= button_to "Add to Bucket", add_escape_to_bucket_path(@escape), method: :post, class: "btn btn-primary" %>
+  <%= link_to "Back to escapes", escapes_path, class: "btn btn-secondary"%>
+</div>
+
 </div>

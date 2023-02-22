@@ -2,9 +2,8 @@
 
 <%= render @position %>
 
-<div>
-  <%= link_to "Edit this position", edit_position_path(@position) %> |
-  <%= link_to "Back to positions", positions_path %>
-
-  <%= button_to "Destroy this position", @position, method: :delete %>
+<div class ='text-center'>
+<%= button_to "Add to Bag", add_position_to_bag_path(@position), method: :post, class: "btn btn-primary" %>
+<%= button_to "Add to Bucket", add_position_to_bucket_path(@position), method: :post, class: "btn btn-primary" %>
+<%= link_to "Back to positions", positions_path, class: "btn btn-secondary" %>
 </div>

@@ -1,5 +1,7 @@
 class BagsController < ApplicationController
-  before_action :set_bag, only: %i[ show edit update destroy ]
+     before_action :authenticate_user!, only: [:add_to_bag]
+   before_action :set_bag, only: [:show]
+
 
   # GET /bags or /bags.json
   def index
@@ -10,6 +12,30 @@ class BagsController < ApplicationController
   def show
   end
 
+  def my_bag
+    @bag = current_user.bag
+    @submissions = @bag.submissions
+    @positions = @bag.positions
+    @escapes = @bag.escapes
+  end
+
+  def add_submission_to_bag
+    submission = Submission.find(params[:id])
+    current_user.bag.submissions << submission
+    redirect_to submission_path(submission), notice: 'Submission was successfully added to your bag.'
+  end
+
+  def add_position_to_bag
+    position = Position.find(params[:id])
+    current_user.bag.positions << position
+    redirect_to position_path(position), notice: 'Position was successfully added to your bag.'
+  end
+
+  def add_escape_to_bag
+    escape = Escape.find(params[:id])
+    current_user.bag.escapes << escape
+    redirect_to escape_path(escape), notice: 'Escape was successfully added to your bag.'
+  end
   # GET /bags/new
   def new
     @bag = Bag.new

@@ -1,0 +1,36 @@
+<h1>My Bucket</h1>
+
+<% if @bucket.submissions.any? %>
+  <h2>Submissions</h2>
+  <ul>
+    <% @bucket.submissions.each do |submission| %>
+      <li><%= submission.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No submissions in your bucket</p>
+<% end %>
+
+
+<% if @bucket.positions.any? %>
+  <h2>Positions</h2>
+  <ul>
+    <% @bucket.positions.each do |position| %>
+      <li><%= position.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No positions in your bucket</p>
+<% end %>
+
+
+<% if @bucket.escapes.any? %>
+  <h2>Escapes</h2>
+  <ul>
+    <% @bucket.escape.each do |position| %>
+      <li><%= escape.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No escapes in your bucket</p>
+<% end %>
