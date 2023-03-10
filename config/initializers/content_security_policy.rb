@@ -19,10 +19,10 @@ Rails.application.configure do
     policy.object_src :none
 
     # Allow scripts to be loaded from the same origin and from secure origins, but not inline scripts:
-    policy.script_src :self, :https
+    policy.script_src :self, :https, :unsafe-inline
 
     # Allow styles to be loaded from the same origin and from secure origins:
-    policy.style_src :self, :https
+    policy.style_src   :self, :https, :unsafe-inline
 
     # Allow iframes to be loaded from YouTube
     policy.frame_src "https://www.youtube.com"
