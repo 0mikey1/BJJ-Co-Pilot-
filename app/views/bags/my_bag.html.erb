@@ -1,36 +1,98 @@
-<h1>My Bag</h1>
+<div class="container">
+  <div class="row">
+<br>
 
-<% if @bag.submissions.any? %>
-  <h2>Submissions</h2>
-  <ul>
-    <% @bag.submissions.each do |submission| %>
-      <li><%= submission.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No submissions in your bag</p>
-<% end %>
+    <div class="bag-container">
+  <h1 class="text-white text-center gamify">Welcome To Your Bag</h1>
+  <p class="text-white text-center gamify">Your personal toolbox for mastering Brazilian Jiu-Jitsu! Here, every BJJ Co-Pilot user can store their best techniques, whether you've performed them in sparring, competition, or just feel confident in them. Keep your techniques organized and at your fingertips, so you can stay ahead of the game and dominate the mats. Whether you're a pro or just starting out, the Bag is your perfect companion for taking your BJJ skills to the next level. So open up your Bag and start filling it with your favorite techniques today! </p>
+</div>
+    <div class="col-md-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h2 class="card-title">Submissions</h2>
+          <% if @bag.submissions.any? %>
+            <% @bag.submissions.each do |submission| %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title text-dark"><%= submission.name %></h5>
+                  <h6 class="card-subtitle mb-2 text-muted"> Category: <%= submission.category %></h6>
+                  <p class="card-text text-dark">Difficulty: <%= submission.difficulty %></p>
+                  <p class="card-text text-dark"><%= submission.from_position %></p>
+
+                <iframe src='https://www.youtube.com/embed/<%= submission.video_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+
+        <%= link_to "Show Submission", submission_path(submission), class: "btn btn-primary mt-2" %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>No submissions in your bag</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h2 class="card-title">Positions</h2>
+          <% if @bag.positions.any? %>
+            <% @bag.positions.each do |position| %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title text-dark"><%= position.name %></h5>
+                  <p class="card-text text-dark"> Description: <%= position.description %></p>
+                  <p class="card-text text-dark">Possible Submissions: <%= position.possible_submissions %></p>
+                  <iframe src='https://www.youtube.com/embed/<%= position.video_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
 
-<% if @bag.positions.any? %>
-  <h2>Positions</h2>
-  <ul>
-    <% @bag.positions.each do |position| %>
-      <li><%= position.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No positions in your bag</p>
-<% end %>
+        <%= link_to "Show Position", position_path(position), class: "btn btn-primary mt-2" %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>No positions in your bag</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <h2 class="card-title">Escapes</h2>
+          <% if @bag.escapes.any? %>
+            <% @bag.escapes.each do |escape| %>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title"><%= escape.name %></h5>
+                  <p class="card-text"><%= escape.description %></p>
+                 <iframe src='https://www.youtube.com/embed/<%= escape.video_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
 
-<% if @bag.escapes.any? %>
-  <h2>Escapes</h2>
-  <ul>
-    <% @bag.escape.each do |position| %>
-      <li><%= escape.name %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No escapes in your bag</p>
-<% end %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p>No escapes in your bag</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<style> 
+
+.card {
+  flex-basis: calc(50% - 20px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+
+</style>

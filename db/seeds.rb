@@ -8,6 +8,7 @@
 
 Submission.destroy_all
 Position.destroy_all
+Escape.destroy_all
 
 submission1 = Submission.create(name: "Arm bar", category: "Arm Lock", difficulty: "Beginner", from_position: "", description: "", video_url: "Dq8nahFOnI4")
 
@@ -161,7 +162,7 @@ position3 = Position.create(name: "Open Guard", video_url: "LPet-GrNNB8", descri
 position4 = Position.create(name: "Butterfly Guard", video_url: "MXcQfCIh7n4", description: "The Butterfly Guard is an Open Guard- what that means is that you don't have your legs locked around them as in Half Guard or Closed Guard. Here, you're using your “hooks”, the instep of your feet, to keep your opponent away from your upper body, and to elevate their legs and hips when the opportunity arises.", possible_submissions: "Arm Bar, Triangle Choke, Omaplata, Ankle Lock, Kimura")
 
 position5 = Position.create(name: "Spider Guard", video_url: "5ciTwCNs8uM", description: "Over the years, many guards have been developed and tested in the bright lights of competition. One of these is the venerable spider guard, a gi-based guard where you place your feet on your opponent's biceps to block the upper body while holding the sleeves to manipulate posture.", possible_submissions: "Triangle Choke, Armbar, Omaplata, Kimura")
-
+  \
 position6 = Position.create(name: "Squid Guard", video_url: "5M1TLgoOBNU", description: "Squid Guard is a BJJ guard position where one leg is wrapped around the opponent's neck to control their posture and create opportunities for sweeping or submitting. The name Squid Guard is derived from the tentacle-like appearance of the legs when wrapped around the opponent's neck. The main goal of Squid Guard is to control the opponent's posture, making it difficult for them to attack or advance, while also creating opportunities to sweep or submit the opponent.", possible_submissions: "Armbar, Leg Triangle Choke, Guillotine Choke, Omaplata")
 
 position7 = Position.create(name: "Lasso Guard", video_url: "5lgCDDG60d8", description: "The lasso guard is a type of open guard in BJJ that uses leg and sleeve control to immobilize the upper body movements of opponents attempting to pass. Already a powerful open guard itself, the lasso can become more dangerous when combined with other types of open guards such as the spider guard.", possible_submissions: "Leg Triangle Choke, Armbar, Omaplata, Collar Choke")
@@ -185,5 +186,39 @@ position15 = Position.create(name: "Knee-On-Belly", description: "Knee on Belly 
 position16 = Position.create(name: "Mount", video_url: "OCPLZmupS9c", description: "The mount, or mounted position, is a dominant ground grappling position, where one combatant sits on the other combatants torso with the face pointing towards the opponent's head. This is a favorable position for the top combatant in several ways.", possible_submissions: "Armbar, Americana, Kimura, Straight armlock, Triangle choke, Ezekiel choke, Head and arm choke, Arm triangle choke, Mounted collar choke, Cross choke")
 
 position17 = Position.create(name: "Back Mount", video_url: "d8AhpgO-3t4", description: "The back mount is where you control the opponent from the back. A key idea in using the back mount is to apply chest to back connection as you secure a seatbelt grip. Placing your feet on the opponent's hips is the fundamental positioning taught to beginners.", possible_submissions: "Rear naked choke, Collar choke, Armbar, Triangle choke, Kimura, Straight armlock, Arm triangle choke, Bow and arrow choke, Ezekiel choke, Neck crank")
+
+
+#------------------------------------ Escapes --------------------------------------
+
+
+
+escape1 = Escape.create(name: "Bridge and Roll", description: "One of the most basic escapes from the mount, it involves bridging your hips up, rolling over your shoulder, and ending up in your opponent's guard.", video_url: "VbYueGpaslQ")
+                        
+escape2 = Escape.create(name: "Shrimp Escape", description: "A basic escape used to create space and get your hips out from under your opponent's side control.", video_url: "yiA-UfMxq8s")
+                        
+escape3 = Escape.create(name: "Elbow Escape", description: "An escape from the mount that involves creating space with your elbow and knee, and then recovering guard.", video_url: "MN5j0Nvq_L0")
+                        
+escape4 = Escape.create(name: "Bump Escape", description: "An escape from side control that involves bumping your opponent forward and then recovering guard.", video_url: "CZRjka5-mtA")
+                        
+escape5 = Escape.create(name: "Hip Heist Escape", description: "A basic escape from side control that involves creating space with your hips, turning to face your opponent, and then recovering guard.", video_url: "_2bWz5bN48w")
+                        
+escape6 = Escape.create(name: "Sit-Up Escape", description: "An escape from side control that involves sitting up and creating space with your hips, and then recovering guard or coming up on top.", video_url: "X1xt1K_nvJY")
+                        
+escape7 = Escape.create(name: "Knee Shield Escape", description: "An escape from bottom half guard that involves creating space with your knee shield, and then recovering guard or coming up on top.", video_url: "xPYMrtydNNY")
+                        
+escape8 = Escape.create(name: "Knee-to-Elbow Escape", description: "An escape from bottom side control that involves getting onto your side, creating space with your knee, and then recovering guard.", video_url: "-eCX6umguKE")
+                        
+escape9 = Escape.create(name: "Belly-Down Escape", description: "An escape from back mount that involves getting onto your belly, and then coming up on top or recovering guard.", video_url: "RR3gpAhDcbk")
+                        
+escape10 = Escape.create(name: "Reverse Shrimp Escape", description: "An escape from bottom side control that involves using your legs to create space and then shrimping away from your opponent.", video_url: "Bo4x_ZYU5Z8")
+                        
+escape11 = Escape.create(name: "Elbow Escape from Mount", description: "The elbow escape is a fundamental BJJ escape from the mount position. The objective is to regain guard by creating space and removing the opponent's control over you. The elbow escape requires proper timing and execution to be effective.", video_url: "yejsXQz93O8")
+                        
+escape12 = Escape.create(name: "Scarf Hold Escape", description: "The scarf hold escape is used to escape the kesa gatame (scarf hold) position. It involves bridging and shrimping to create space and remove the opponent's control. It is a fundamental escape that is essential for all BJJ practitioners to know.", video_url: "zcF76x7PJG0")
+                        
+escape13 = Escape.create(name: "Bridging Escape from Side Control", description: "The bridging escape is a fundamental BJJ escape from side control. It involves bridging to create space and remove the opponent's control, and then transitioning to guard. This escape requires good timing and execution to be effective.", video_url: "EyhNJGaQq0I")
+                        
+escape14 = Escape.create(name: "Knee Shield Escape from Half Guard", description: "The knee shield escape is a fundamental BJJ escape from half guard. It involves creating space with the knee shield and then transitioning to guard. The knee shield escape is an essential escape for any BJJ practitioner to know.", video_url: "q_ND-09HiWg")
+
 
 
