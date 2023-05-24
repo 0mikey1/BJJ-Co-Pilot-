@@ -1,15 +1,58 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @escape %>
+<div class="text-center">
 
-<div>
- 
+<div class='escape-description'> 
+  <div class="card">
+    <div class="card-title"> <h5><%= @escape.name%> </h5></div>
+    <hr>
+    <div class="card-body">
+<p class="text-black"> <%= @escape.description%></p>
+      </div>
 
-  <div class ='text-center'> 
+  </div>
+</div>
+<iframe src="https://www.youtube.com/embed/<%=@escape.video_url %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>" frameborder="0" allowfullscreen></iframe>
+</div>
 
-  <%= button_to "Add to Bag", add_escape_to_bag_path(@escape), method: :post, class: "btn btn-primary" %>
-  <%= button_to "Add to Bucket", add_escape_to_bucket_path(@escape), method: :post, class: "btn btn-primary" %>
-  <%= link_to "Back to escapes", escapes_path, class: "btn btn-secondary"%>
+<div class='container'>
+ <div class="row">
+  <div class="col"> </div>
+  <div class="col"> </div>
+  <div class="col"> </div>
+  <div class="col"> </div>
+  <div class="col d-flex justify-content-center">
+    <%= button_to "Add to Bag", add_escape_to_bag_path(@escape), method: :post, class: "btn btn-primary" %>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <%= button_to "Add to Bucket", add_escape_to_bucket_path(@escape), method: :post, class: "btn btn-primary" %>
+  </div>
+  <div class="col d-flex justify-content-center">
+    <%= link_to "Back to escapes", escapes_path, class: "btn btn-secondary" %>
+  </div>
+  <div class="col"> </div>
+  <div class="col"> </div>
+  <div class="col"> </div>
+  <div class="col"> </div>
 </div>
 
 </div>
+
+<style>
+iframe {
+  padding-bottom: 20px;
+  width: 80%;
+  height: 400px;
+}
+.card{
+  background-color: #FFC23C;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 50%;
+}
+.card-title{
+  margin-top: 10px;
+}
+
+</style>
+
