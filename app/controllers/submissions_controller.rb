@@ -9,7 +9,7 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/1 or /submissions/1.json
   def show
-
+      @submission = Submission.find(params[:id])
   end
 
   # GET /submissions/new
